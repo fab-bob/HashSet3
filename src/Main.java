@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 /*Scrivere una funzione che restituisca un hashset riempito
 Creare un oggeto dello stesso tipo inserito nell'HashSet e popolarlo
@@ -10,9 +11,10 @@ public class Main {
 
         HashSet<Integer> numbersFromZerotoTen = fillHashSet();
         numbersFromZerotoTen.add(num);
-        for (Integer element: numbersFromZerotoTen) {
-            if (element == num) {
-                numbersFromZerotoTen.remove(element);
+        Iterator<Integer> iteratore = numbersFromZerotoTen.iterator();
+        while (iteratore.hasNext()) {
+            if (iteratore.next().equals(num)) {
+                iteratore.remove();
             }
         }
         numbersFromZerotoTen.clear();
